@@ -1,7 +1,7 @@
 import Images from '../constants/index';
 
 
-const laodImages = () => ({
+const loadImages = () => ({
     type: Images.LOAD
 });
 
@@ -18,6 +18,23 @@ const setError = error => ({
 });
 
 
+const loadImagesStats = id => ({
+    type: Images.LOAD_STATS,
+    id
+});
+
+const setImageStatsSuccess = (id, downloads) => ({
+    type: Images.LOAD_STATS_SUCCESS,
+    id,
+    downloads
+});
+
+const setImageStatError = id => ({
+    type: Images.LOAD_STATS_FAILURE,
+    id
+});
+
+
 export {
-    laodImages, setImages, setError
+    loadImages, setImages, setError, loadImagesStats, setImageStatsSuccess, setImageStatError
 }
